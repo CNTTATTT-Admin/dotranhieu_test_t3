@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: LMS
+  datasource:
+    url: jdbc:mysql://mysql:3306/thpt_lms?useSSL=false&serverTimezone=UTC
+    username: root
+    password: 09022005
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none   # create | update | validate | none
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQLDialect
+# JWT Configuration
+app:
+  jwt:
+    # JWT secret key for signing tokens (change this in production!)
+    secret: ${JWT_SECRET:mySecretKeyForJWTTokenGenerationAndValidationPurposesOnly123456789}
+    # JWT token expiration time in milliseconds (24 hours)
+    expiration: ${JWT_EXPIRATION:86400000}
+#server:
+#  port: 8080
